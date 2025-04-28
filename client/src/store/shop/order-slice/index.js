@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+const backendurl = process.env.REACT_APP_BACKENDURL;
+
 
 const initialState = {
   approvalURL: null,
@@ -13,7 +15,7 @@ export const createNewOrder = createAsyncThunk(
   "/order/createNewOrder",
   async (orderData) => {
     const response = await axios.post(
-      "http://localhost:5000/api/shop/order/create",
+        `${backendurl}api/shop/order/create`,
       orderData
     );
 
@@ -25,7 +27,7 @@ export const capturePayment = createAsyncThunk(
   "/order/capturePayment",
   async ({ paymentId, payerId, orderId }) => {
     const response = await axios.post(
-      "http://localhost:5000/api/shop/order/capture",
+     `${backendurl}api/shop/order/capture`,
       {
         paymentId,
         payerId,
@@ -41,7 +43,7 @@ export const getAllOrdersByUserId = createAsyncThunk(
   "/order/getAllOrdersByUserId",
   async (userId) => {
     const response = await axios.get(
-      `http://localhost:5000/api/shop/order/list/${userId}`
+      `${backendurl}api/shop/order/list/${userId}`
     );
 
     return response.data;
@@ -52,7 +54,7 @@ export const getOrderDetails = createAsyncThunk(
   "/order/getOrderDetails",
   async (id) => {
     const response = await axios.get(
-      `http://localhost:5000/api/shop/order/details/${id}`
+      `${backendurl}api/shop/order/details/${id}`
     );
 
     return response.data;
