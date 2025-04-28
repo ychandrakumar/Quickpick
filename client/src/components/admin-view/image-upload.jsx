@@ -52,7 +52,7 @@ function ProductImageUpload({
     const data = new FormData();
     data.append("my_file", imageFile);
     const response = await axios.post(
-      `${backendurl}/api/admin/products/upload-image`,
+      `${backendurl}api/admin/products/upload-image`,
       data
     );
     console.log(response, "response");
