@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-const backendurl = process.env.REACT_APP_BACKENDURL;
+const backendurl = import.meta.env.VITE_BACKENDURL;
 
 const initialState = {
   cartItems: [],

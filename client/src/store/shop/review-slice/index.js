@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const backendurl = process.env.REACT_APP_BACKENDURL;
+const backendurl = import.meta.env.VITE_BACKENDURL;
 
 
 const initialState = {
