@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+axios.defaults.withCredentials = true;
+
 const backendurl = import.meta.env.VITE_BACKENDURL;
 
 
